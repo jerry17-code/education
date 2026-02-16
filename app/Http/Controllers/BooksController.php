@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -11,7 +12,8 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+        return response()->json($books);
     }
 
     /**
@@ -35,7 +37,12 @@ class BooksController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $book = Book::find($id);
+        if ($book) {
+            return response()->json($book);
+        } else {
+            return response()->json(['message' => 'Book not found'], 404);
+        }
     }
 
     /**
@@ -59,6 +66,12 @@ class BooksController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $book = Book::find($id);
+        if ($book) {
+            $book->delete();
+            return response()->json(['message' => 'Book deleted successfully']);
+        } else {
+            return response()->json(['message' => 'Book not found'], 404);
+        }
     }
 }
