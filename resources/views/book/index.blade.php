@@ -10,16 +10,13 @@
 
  <body>
      <div class="container my-3">
-         <h2 class="text text-primary">This is welcome page</h2>
+         <h2 class="bg-secondary text-white">This is welcome page</h2>
 
          <p class="text text-secondary my-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam laboriosam dolore blanditiis placeat nulla quisquam laborum quidem excepturi accusamus odio. Minus nulla itaque ullam molestias sequi quidem, beatae incidunt suscipit.</p>
 
-
-
-
          <table class="table table-striped">
              <thead>
-                 <tr>
+                 <tr class="bg-secondary text-white">
                      <th>ID</th>
                      <th>Name</th>
                      <th>Book Of </th>
